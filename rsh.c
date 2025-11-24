@@ -59,8 +59,11 @@ int main() {
 
 		if(strcmp(command, "cd") == 0){
 			int argCount = 0;
-
+			char dir[50];
 			while(command != NULL){
+				if(argCount == 1){
+					strcpy(dir, command);
+				}
 				argCount++;
 				command = strtok(NULL, " ");	
 			}
@@ -68,8 +71,7 @@ int main() {
 				printf("-rsh: cd: too many arguments\n");
 			}
 			else{
-				command = strtok(NULL, " ");
-				if(command != NULL) chdir(command);
+				chdir(dir);
 			}
 		}
 		else if(strcmp(command, "exit") == 0){
