@@ -20,9 +20,6 @@ void getCMD(const char* cmd, char* command){
 
 
 int isAllowed(const char*cmd) {
-	// TODO
-	// return 1 if cmd is one of the allowed commands
-	// return 0 otherwise
 	char command[50];
         getCMD(cmd, command);	
 	for(int x = 0; x < N; x++){
@@ -97,7 +94,7 @@ int main() {
 			int argLength = strlen(command) + 1;
 			char* args;
 			args = malloc(sizeof(int)*50);
-		        strncpy(args, line + argLength, 20);  
+		        strncpy(args, line + argLength, 50);  
 			char *argv[21];
 		       	argv[0] = command;
 
@@ -111,7 +108,7 @@ int main() {
 				else break;
 			}
 
-			argv[index] = NULL;
+			argv[index+1] = NULL;
 
 			int status;
 			posix_spawnattr_t attr;
