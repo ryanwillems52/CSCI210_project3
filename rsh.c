@@ -94,7 +94,7 @@ int main() {
 			int argLength = strlen(command) + 1;
 			char* args;
 			args = malloc(sizeof(int)*50);
-		        strncpy(args, line + argLength, strlen(line) - argLength);  
+		        strncpy(args, line + argLength, 20);  
 			char *argv[21];
 		       	argv[0] = command;
 
