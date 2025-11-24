@@ -108,7 +108,7 @@ int main() {
 				else break;
 			}
 
-			argv[index+1] = NULL;
+			argv[index] = NULL;
 
 			int status;
 			posix_spawnattr_t attr;
