@@ -23,7 +23,7 @@ int isAllowed(const char*cmd) {
 	// TODO
 	// return 1 if cmd is one of the allowed commands
 	// return 0 otherwise
-	char command[20];
+	char command[50];
         getCMD(cmd, command);	
 	for(int x = 0; x < N; x++){
 		if(strcmp(command, allowed[x]) == 0) return 1;
@@ -53,7 +53,7 @@ int main() {
 	}
 	else{
 		char* command;
-		command = malloc(sizeof(char)*20);
+		command = malloc(sizeof(char)*50);
 	       	strcpy(command, line);
 		strtok(command, " ");
 
